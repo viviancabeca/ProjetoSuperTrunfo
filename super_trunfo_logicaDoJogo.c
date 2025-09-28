@@ -21,6 +21,7 @@ int main(){
     long double pib_percapita_cidade2;
     long double inverso_densidade_populacional_cidade1;
     long double inverso_densidade_populacional_cidade2;
+    int escolhaJogador;
     
     
     printf("Vamos começar! Vou pedir uma série de informações da sua primeira carta.\n");
@@ -146,10 +147,102 @@ int main(){
     if(pib1 > pib2){
         printf("Resultado: Carta 1 (%s) venceu!\n", cidade1);
     }else{
-        printf("Resultado: Carta 2 (%s) venceu!\n", cidade2);
+        printf("Resultado: Carta 2 (%s) venceu!\n\n\n", cidade2);
+    }
+
+    printf("### Escolha um atributo das cartas acima para comparar, de acordo com o Manu abaixo ###\n\n");
+    printf("1. População \n");
+    printf("2. Área \n");
+    printf("3. PIB \n");
+    printf("4. Pontos turísticos \n");
+    printf("5. Densidade populacional \n");
+    printf("6. PIB per capita \n\n");
+    scanf("%d", &escolhaJogador);
+
+
+    /*
+    if (escolhaJogador == 1){
+            printf("O atributo escolhido foi: População\n");
+        }
+        if (escolhaJogador == 2){
+            printf("O atributo escolhido foi: Área\n");
+        }
+        if (escolhaJogador == 3){
+            printf("O atributo escolhido foi: PIB\n");
+        }
+        if(escolhaJogador == 4){
+            printf("O atributo escolhido foi: Pontos turísticos\n");
+        }
+        if(escolhaJogador == 5){
+            printf("O atributo escolhido foi: Densidade populacional\n");
+        }
+        if(escolhaJogador == 6){
+            printf("O atributo escolhido foi: PIB per capita");
+        }
+    */
+
+    if(escolhaJogador == 1 || escolhaJogador == 2 || escolhaJogador == 3 || escolhaJogador == 4 || escolhaJogador == 5 || escolhaJogador == 6){
+            printf("Cidade 1: \n");
+            printf("%s\n", cidade1);
+            printf("Cidade 2: \n");
+            printf("%s\n\n", cidade2);
+        
+            switch (escolhaJogador){
+            case 1:
+                printf("Jogador escolheu comparar o atributo: População\n\n");
+                printf("População da cidade 1: \n");
+                printf("%lu\n", populacao1);
+                printf("População da cidade 2: \n");
+                printf("%lu\n\n", populacao2);
+            break;
+            case 2:
+                printf("Jogador escolheu comparar o atributo: Área\n\n");
+                printf("Área da cidade 1: \n");
+                printf("%f\n", area1);
+                printf("Área da cidade 2: \n");
+                printf("%f\n\n", area2);
+            break;
+            case 3:
+                printf("Jogador escolheu comparar o atributo: PIB\n\n");
+                printf("PIB da cidade 1: \n");
+                printf("%Lf\n", pib1);
+                printf("PIB da cidade 2: \n");
+                printf("%Lf\n\n", pib2);
+            break;
+            case 4:
+                printf("Jogador escolheu comparar o atributo: Pontos turísticos\n\n");
+                printf("Nº de pontos turísticos da cidade 1: \n");
+                printf("%d\n", pontos_turisticos1);
+                printf("Nº de pontos turísticos da cidade 2: \n");
+                printf("%d\n\n", pontos_turisticos2);
+            break;
+            case 5:
+                printf("Jogador escolheu comparar o atributo: Densidade populacional\n\n");
+                printf("Densidade populacional da cidade 1: \n");
+                printf("%Lf\n", densidade_populacional_cidade1);
+                printf("Densidade populacional da cidade 2: \n");
+                printf("%Lf\n\n", densidade_populacional_cidade2);
+            break;
+            case 6:
+                printf("Jogador escolheu comparar o atributo: PIB per capita\n\n");
+                printf("PIB per capita da cidade 1: \n");
+                printf("%Lf\n", pib_percapita_cidade1);
+                printf("PIB per capita da cidade 2: \n");
+                printf("%Lf\n\n", pib_percapita_cidade2);
+            break;
+            default:
+                printf("Opção inválida\n");
+            break;
+            }
+        
+        if ((populacao1 > populacao2) && (area1 > area2) && (pib1 > pib2) && (pontos_turisticos1 > pontos_turisticos2) &&
+            (pib_percapita_cidade1 > pib_percapita_cidade2) && (densidade_populacional_cidade1 < densidade_populacional_cidade2)){
+            printf("Carta 1 venceu!\n");
+        }else{
+            printf("Carta 2 venceu!\n");
+        }
     }
 
     return 0;
-
 
 }
