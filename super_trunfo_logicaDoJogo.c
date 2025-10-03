@@ -144,13 +144,6 @@ int main(){
     scanf("%d", &escolha1Jogador);
 
     if(escolha1Jogador == 1 || escolha1Jogador == 2 || escolha1Jogador == 3 || escolha1Jogador == 4 || escolha1Jogador == 5 || escolha1Jogador == 6){
-            /*
-            printf("Cidade 1: \n");
-            printf("%s\n", cidade1);
-            printf("Cidade 2: \n");
-            printf("%s\n\n", cidade2);
-            */
-
             switch (escolha1Jogador){
             case 1:
                 printf("Jogador escolheu comparar o atributo: População\n\n");
@@ -201,16 +194,6 @@ int main(){
     
     printf("### Escolha OUTRO atributo das cartas acima para comparar. Ele tem de ser diferente do primeiro que você escolhheu ###\n\n");
     
-    /*
-    printf("1. População \n");
-    printf("2. Área \n");
-    printf("3. PIB \n");
-    printf("4. Pontos turísticos \n");
-    printf("5. Densidade populacional \n");
-    printf("6. PIB per capita \n\n");
-    scanf("%d", &escolha1Jogador);
-    */
-   
     if (escolha1Jogador == 1){
         printf("2. Área \n");
         printf("3. PIB \n");
@@ -307,7 +290,7 @@ int main(){
             break;
         }
     }
-        
+
     if(escolha1Jogador == 1){
         if(populacao1 > populacao2){
             printf("População da cidade 1 %s é maior do que a população da cidade 2, %s\n", cidade1, cidade2);
@@ -349,7 +332,7 @@ int main(){
     }
     
     
-    if(escolha2Jogador == 1){
+    if(escolha2Jogador == 1){ 
         if(populacao1 > populacao2){
             printf("População da cidade 1 %s é maior do que a população da cidade 2, %s\n", cidade1, cidade2);
         }else{
@@ -389,18 +372,20 @@ int main(){
         printf("Opções inválidas!\n");
     }
 
-    soma_atributos = escolha1Jogador + escolha2Jogador;
-
-   
-        /*
-        if ((populacao1 > populacao2) && (area1 > area2) && (pib1 > pib2) && (pontos_turisticos1 > pontos_turisticos2) &&
-            (pib_percapita_cidade1 > pib_percapita_cidade2) && (densidade_populacional_cidade1 < densidade_populacional_cidade2)){
-            printf("Carta 1 venceu!\n");
-        }else{
-            printf("Carta 2 venceu!\n");
-        }
-        */
+    }
+        
+    long double somaCarta1 = 0;
+    long double somaCarta2 = 0;
+    
+    switch (escolha1Jogador){
+    case 1:
+        printf("Soma do mesmo atributo não é permitida!");
+        break;
+    case 2:
+        somaCarta1 += populacao1 + pib1; 
+    default:
+        break;
+    }
 
     return 0;
-}
 }
